@@ -56,4 +56,20 @@ const activeHeader = function () {
     }
 }
 
-addEventOnelem(windwo, "scroll", activeHeader);
+addEventOnelem(window, "scroll", activeHeader);
+
+/**
+ * filter tab
+ */
+
+const tabCard = document.querySelectorAll("[data-tab-card]");
+
+let LastTabCard = tabCard[0];
+
+const navigateTab = function () {
+    LastTabCard.classList.remove("active");
+    this.classList.add("active");
+    LastTabCard = this;
+}
+
+addEventOnelem(tabCard, "click", navigateTab);

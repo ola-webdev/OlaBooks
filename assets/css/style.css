@@ -60,8 +60,8 @@
 
 --shadow-1: 4px 6px 10px hsla(231, 94%, 7%, 0.06);
 --shadow-2: 2px 0 15px 5px hsla(231, 94%, 7%, 0.06);
---shadow-3: 3px 5px;
---shadow-4: 5px 5px var(--chinese-violet);
+--shadow-3: 3px 5px hsl(304, 14%, 46%);
+--shadow-4: 5px 5px hsl(304, 14%, 46%);
 
 /**
 * radius
@@ -231,6 +231,53 @@ body {
 }
 
 .btn-link:is(:hover, :focus) { color: var(--chinese-violet); }
+
+.has-underline {
+  position: relative;
+  margin-block-end: 60px;
+}
+
+.has-underline .span {
+  height: 2px;
+  background-color: var(--old-rose_30);
+  width: 200px;
+  margin-inline: auto;
+  margin-block-start: 30px;
+}
+
+.has-underline .has-before::before {
+  width: 18px;
+  height: 18px;
+  top: 2px;
+  left: 45%;
+  transform: translateY(-50%) rotate(45deg);
+  background-color: var(--old-rose_30);
+  box-shadow: 7px -7px var(--old-rose_30);
+}
+
+.btn {
+  padding: 12px 30px;
+  transition: var(--transition-1);
+}
+
+.btn-primary {
+  background-color: var(--old-rose);
+  color: var(--white);
+  border-radius: 5px;
+}
+
+.btn-primary:is(:hover, :focus) { background-color: var(--charcoal); }
+
+.btn-secondary {
+  border: 1px solid var(--old-rose);
+  color: var(--old-rose);
+  border-radius: 5px;
+}
+
+.btn-secondary:is(:hover, focus) {
+  background-color: var(--old-rose);
+  color: var(--white);
+}
 
 
 
@@ -455,6 +502,18 @@ body {
   #CHAPTERS
 \*-----------------------------------*/
 
+.chapter-card {
+  height: 100%;
+  background-color: var(--white);
+  padding: 25px;
+  border-radius: var(--radius-5);
+  box-shadow: var(--shadow-2);
+  transition: var(--transition-2);
+}
+
+.chapter-card:is(:hover, :focus-within) { transform: translateY(-10px); }
+
+.chapter-card .card-title { margin-block-end: 15px; }
 
 
 
@@ -463,6 +522,47 @@ body {
   #PREVIEW
 \*-----------------------------------*/
 
+.tab-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tab-card {
+  position: relative;
+  height: 60px;
+  background-color: var(--seashell);
+  border-radius: var(--radius-10);
+  box-shadow: var(--shadow-3);
+  display: grid;
+  place-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  transition: var(--transition-1);
+}
+
+.tab-card .w-100 {
+  pointer-events: none;
+  opacity: 0;
+  transition: var(--transition-2);
+}
+
+.tab-card.active .w-100 { opacity: 1; }
+
+.tab-card.active {
+  height: 40vh;
+  box-shadow: none;
+}
+
+.tab-text {
+  font-size: var(--fs-4);
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tab-card.active .tab-text { display: none; }
 
 
 
@@ -471,6 +571,33 @@ body {
   #PRICING
 \*-----------------------------------*/
 
+.pricing-card {
+  padding: 40px 50px;
+  background-color: var(--white);
+  text-align: center;
+  transition: var(--transition-2);
+}
+
+.pricing-card:is(:hover, :focus-within),
+.pricing-card.bundle { box-shadow: var(--shadow-4); }
+
+.pricing-card:is(:hover, :focus-within) { transform: translateY(-10px);}
+
+.pricing-card .price {
+  font-family: var(--ff-philosopher);
+  font-size: var(--fs-1);
+  color: var(--charcoal);
+  font-weight: var(--fw-700);
+  margin-block-start: 10px;
+}
+
+.pricing-card-list { margin-block: 20px 40px; }
+
+.pricing-card-list .card-item:not(:last-child) { border-block-end: 1px solid var(--ghost-white); }
+
+.pricing-card-list .card-text { padding-block: 10px; }
+
+.pricing-card .btn { margin-inline: auto; }
 
 
 
