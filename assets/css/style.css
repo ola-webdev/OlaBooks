@@ -707,7 +707,47 @@ textarea.input-field {
 
 .contact-card {
   background-color: var(--seashell);
-  
+  padding: 30px;
+}
+
+.contact-card .card-title {
+  font-family: var(--ff-philosopher);
+  text-transform: uppercase;
+  font-weight: var(--fw-700);
+}
+
+.contact-card > li:not(:last-child) { margin-block-end: 30px; }
+
+.contact-card .card-link {
+  color: var(--chinese-violet);
+  transform: var(--transition-1);
+}
+
+.contact-card .card-link:is(:hover, :focus) { color: var(--old-rose); }
+
+.social-list-title {
+  font-variant: var(--fs-6);
+  font-weight: var(--fw-700);
+  margin-block-end: 15px;
+}
+
+.social-list {
+  display: flex;
+  gap: 10px;
+}
+
+.social-link {
+  background-color: var(--old-rose);
+  color: var(--white);
+  font-size: 20px;
+  padding: 5px;
+  box-shadow: var(--shadow-3);
+  transition: var(--transition-1);
+}
+
+.social-link:is(:hover, :focus) {
+  background-color: var(--charcoal);
+  box-shadow: none;
 }
 
 
